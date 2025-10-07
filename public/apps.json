@@ -1,0 +1,266 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co.com/0dbsv8m/mariia-shalabaieva-4-Vh-Dq-Jy69v-Q-unsplash.jpg",
+        "title": "WhatsApp Messenger",
+        "companyName": "Meta",
+        "description": "A productivity app to organize your tasks efficiently.",
+        "size": 120,
+        "reviews": 350,
+        "ratingAvg": 4.5,
+        "downloads": 12000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 10
+            },
+            {
+                "name": "2 star",
+                "count": 15
+            },
+            {
+                "name": "3 star",
+                "count": 40
+            },
+            {
+                "name": "4 star",
+                "count": 120
+            },
+            {
+                "name": "5 star",
+                "count": 165
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co.com/GQBb28rz/alexander-shatov-71-Qk8-ODIBko-unsplash.jpg",
+        "title": "Instagram",
+        "companyName": "Meta",
+        "description": "A fun app to track your daily fitness activities.",
+        "size": 85,
+        "reviews": 210,
+        "ratingAvg": 4.2,
+        "downloads": 9000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 8
+            },
+            {
+                "name": "2 star",
+                "count": 12
+            },
+            {
+                "name": "3 star",
+                "count": 50
+            },
+            {
+                "name": "4 star",
+                "count": 70
+            },
+            {
+                "name": "5 star",
+                "count": 70
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co.com/dsZwfmM7/alexander-shatov-I4p0-Fcj-DBJI-unsplash.jpg",
+        "title": "TikTok",
+        "companyName": "ByteDance",
+        "description": "An education app to enhance your coding skills.",
+        "size": 95,
+        "reviews": 420,
+        "ratingAvg": 4.7,
+        "downloads": 15000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 5
+            },
+            {
+                "name": "2 star",
+                "count": 8
+            },
+            {
+                "name": "3 star",
+                "count": 40
+            },
+            {
+                "name": "4 star",
+                "count": 150
+            },
+            {
+                "name": "5 star",
+                "count": 217
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "image": "https://i.ibb.co.com/1f8XMdNf/alexander-shatov-w-qqwn5-O-4-I-unsplash.jpg",
+        "title": "Spotify",
+        "companyName": "Spotify Ltd.",
+        "description": "A creative design app for making stunning visuals.",
+        "size": 110,
+        "reviews": 300,
+        "ratingAvg": 4.3,
+        "downloads": 11000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 12
+            },
+            {
+                "name": "2 star",
+                "count": 20
+            },
+            {
+                "name": "3 star",
+                "count": 60
+            },
+            {
+                "name": "4 star",
+                "count": 100
+            },
+            {
+                "name": "5 star",
+                "count": 108
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "image": "https://i.ibb.co.com/Nn3GkbqR/alexander-shatov-ni-Uk-Im-Zc-SP8-unsplash.jpg",
+        "title": "YouTube",
+        "companyName": "Google",
+        "description": "A financial app to track your expenses and budgets.",
+        "size": 75,
+        "reviews": 180,
+        "ratingAvg": 4.0,
+        "downloads": 8000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 15
+            },
+            {
+                "name": "2 star",
+                "count": 20
+            },
+            {
+                "name": "3 star",
+                "count": 50
+            },
+            {
+                "name": "4 star",
+                "count": 60
+            },
+            {
+                "name": "5 star",
+                "count": 35
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "image": "https://i.ibb.co.com/Mk0ZN5nB/rubaitul-azad-q-K8-Tu-Z7-T9-N4-unsplash.jpg",
+        "title": "Google Maps",
+        "companyName": "Google",
+        "description": "A travel app for discovering new places and adventures.",
+        "size": 130,
+        "reviews": 250,
+        "ratingAvg": 4.4,
+        "downloads": 10000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 10
+            },
+            {
+                "name": "2 star",
+                "count": 15
+            },
+            {
+                "name": "3 star",
+                "count": 55
+            },
+            {
+                "name": "4 star",
+                "count": 90
+            },
+            {
+                "name": "5 star",
+                "count": 80
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "image": "https://i.ibb.co.com/QjT7c4mH/alexander-shatov-CTZh-Gb-Sx-WLI-unsplash.jpg",
+        "title": "Facebook",
+        "companyName": "Meta",
+        "description": "A music streaming app with offline support.",
+        "size": 105,
+        "reviews": 320,
+        "ratingAvg": 4.6,
+        "downloads": 14000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 7
+            },
+            {
+                "name": "2 star",
+                "count": 10
+            },
+            {
+                "name": "3 star",
+                "count": 55
+            },
+            {
+                "name": "4 star",
+                "count": 110
+            },
+            {
+                "name": "5 star",
+                "count": 138
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "image": "https://i.ibb.co.com/tw1vSQn9/rubaitul-azad-Lyit-Se2-F50-Y-unsplash.jpg",
+        "title": "Snapchat",
+        "companyName": "Snap Inc.",
+        "description": "A health app to monitor your daily habits and sleep.",
+        "size": 90,
+        "reviews": 200,
+        "ratingAvg": 4.1,
+        "downloads": 9500,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 10
+            },
+            {
+                "name": "2 star",
+                "count": 12
+            },
+            {
+                "name": "3 star",
+                "count": 48
+            },
+            {
+                "name": "4 star",
+                "count": 70
+            },
+            {
+                "name": "5 star",
+                "count": 60
+            }
+        ]
+    }
+]

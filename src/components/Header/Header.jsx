@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router';
+
 
 const Header = () => {
     return (
@@ -18,19 +20,31 @@ const Header = () => {
                         </ul>
                     </div>
                     <div>
-                        <img className='w-6 h-6' src="/assets/logo.png" alt="" />
+                        <img className='w-7 h-7' src="/assets/logo.png" alt="" />
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="btn btn-ghost text-xl">Hero.IO</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Home</a></li>
-                        <li><a>Apps</a></li>
-                        <li><a>Installation</a></li>
+                        <li>
+                            <NavLink to="/" className={({ isActive }) => isActive ? "font-bold text-blue-600" : ""}>
+                                Home
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/apps" className={({ isActive }) => isActive ? "font-bold text-blue-600" : ""}>
+                                Apps
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/installation" className={({ isActive }) => isActive ? "font-bold text-blue-600" : ""}>
+                                Installation
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <button className="btn btn-primary"><img src="/assets/githubIcon.png" alt="" /> Contribute</button>
                 </div>
             </div>
         </div>
