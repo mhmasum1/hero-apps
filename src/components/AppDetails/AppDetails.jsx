@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import RatingsChart from '../RatingsChart/RatingsChart';
+import toast, { Toaster } from 'react-hot-toast';
 
 const AppDetails = () => {
     const { id } = useParams();
     const [app, setApp] = useState(null);
+    const [installed, setInstalled] = useState(false);
 
     useEffect(() => {
         fetch("/appsFound.json")
@@ -16,6 +18,11 @@ const AppDetails = () => {
             .catch(err => console.error("Error loading app details:", err));
     }, [id]);
 
+    const handleInstall = () => {
+        setInstalled(true);
+        toast.success(`${app.title} installed successfully !`);
+    };
+
     if (!app) {
         return (
             <div className="flex justify-center items-center h-screen">
@@ -25,7 +32,7 @@ const AppDetails = () => {
     }
 
     return (
-        <div className="max-w-6xl mx-auto p-6">
+        <div className=" mx-auto p-6">
             <div className="bg-white rounded-lg shadow-lg p-8">
                 <div className="flex flex-col md:flex-row gap-8 mb-8">
                     <img
@@ -55,18 +62,28 @@ const AppDetails = () => {
                             </div>
                         </div>
 
-                        <button className="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 transition">
-                            Install Now ({app.size} MB)
+                        <button
+                            onClick={handleInstall}
+                            disabled={installed}
+                            className={`px-6 py-2 rounded text-white transition ${installed
+                                ? 'bg-gray-400 cursor-not-allowed'
+                                : 'bg-green-500 hover:bg-green-600'
+                                }`}
+                        >
+                            {installed ? 'Installed' : `Install Now (${app.size} MB)`}
                         </button>
                     </div>
                 </div>
+
                 <RatingsChart ratings={app.ratings} />
 
                 <div className="mb-8">
-                    <h2 className="text-2xl font-bold mb-4">About</h2>
+                    <h2 className="text-2xl font-bold mb-4">Description</h2>
                     <p>{app.description}</p>
                 </div>
             </div>
+
+            <Toaster position="top-right" />
         </div>
     );
 };

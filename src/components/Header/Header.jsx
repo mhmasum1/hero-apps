@@ -1,8 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router';
-import logo from '../../../public/assets/logo.png'
-import githubImg from '../../../public/assets/githubIcon.png'
-
+import { NavLink, Link } from 'react-router-dom'; // Link import করা লাগবে
+import logo from '../../../public/assets/logo.png';
+import githubImg from '../../../public/assets/githubIcon.png';
 
 const Header = () => {
     return (
@@ -11,21 +10,25 @@ const Header = () => {
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
                         </div>
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Home</a></li>
-                            <li><a>Apps</a></li>
-                            <li><a>Installation</a></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/apps">Apps</Link></li>
+                            <li><Link to="/installation">Installation</Link></li>
                         </ul>
                     </div>
-                    <div>
-                        <img className='w-7 h-7' src={logo} alt="" />
-                    </div>
-                    <a className="btn btn-ghost text-xl">Hero.IO</a>
+
+                    <Link to="/" className="flex items-center gap-2">
+                        <img className='w-7 h-7' src={logo} alt="Hero.IO Logo" />
+                        <span className="btn btn-ghost text-xl normal-case">Hero.IO</span>
+                    </Link>
                 </div>
+
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li>
@@ -45,8 +48,11 @@ const Header = () => {
                         </li>
                     </ul>
                 </div>
+
                 <div className="navbar-end">
-                    <button onClick={() => window.open("https://github.com/mhmasum1", "_blank")} className="btn btn-primary"><img src={githubImg} alt="" /> Contribute</button>
+                    <button onClick={() => window.open("https://github.com/mhmasum1", "_blank")} className="btn btn-primary">
+                        <img src={githubImg} alt="" /> Contribute
+                    </button>
                 </div>
             </div>
         </div>
