@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router';
+import logo from '../../../public/assets/logo.png'
+import githubImg from '../../../public/assets/githubIcon.png'
 
 
 const Header = () => {
@@ -20,7 +22,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <div>
-                        <img className='w-7 h-7' src="/assets/logo.png" alt="" />
+                        <img className='w-7 h-7' src={logo} alt="" />
                     </div>
                     <a className="btn btn-ghost text-xl">Hero.IO</a>
                 </div>
@@ -44,7 +46,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn btn-primary"><img src="/assets/githubIcon.png" alt="" /> Contribute</button>
+                    <button className="btn btn-primary"><img src={githubImg} alt="" /> Contribute</button>
                 </div>
             </div>
         </div>

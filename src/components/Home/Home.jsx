@@ -1,5 +1,7 @@
 import React from 'react';
 import AppList from '../AppList/AppList';
+import googlePlay from '../../../public/assets/google_play.png'
+import playStore from '../../../public/assets/app_store.png'
 
 const Home = () => {
     return (
@@ -12,8 +14,8 @@ const Home = () => {
                         At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting. <br />Our goal is to turn your ideas into digital experiences that truly make an impact.
                     </p>
                     <div className='flex justify-center gap-2'>
-                        <button className="btn font-bold"> <img src="/assets/google_play.png" alt="" /> Google Play</button>
-                        <button className="btn font-bold"> <img src="/assets/app_store.png" alt="" /> App Store</button>
+                        <button className="btn font-bold"> <img src={googlePlay} alt="" /> Google Play</button>
+                        <button className="btn font-bold"> <img src={playStore} alt="" /> App Store</button>
                     </div>
                     <div className='pt-6'>
                         <img className='mx-auto' src="/assets/hero.png" alt="" />
