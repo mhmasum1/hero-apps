@@ -2,6 +2,7 @@ import React from 'react';
 import AppList from '../AppList/AppList';
 import googlePlay from '../../../public/assets/google_play.png'
 import playStore from '../../../public/assets/app_store.png'
+import { Link } from 'react-router';
 
 const Home = () => {
     return (
@@ -14,8 +15,8 @@ const Home = () => {
                         At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting. <br />Our goal is to turn your ideas into digital experiences that truly make an impact.
                     </p>
                     <div className='flex justify-center gap-2'>
-                        <button className="btn font-bold"> <img src={googlePlay} alt="" /> Google Play</button>
-                        <button className="btn font-bold"> <img src={playStore} alt="" /> App Store</button>
+                        <button onClick={() => window.open("https://play.google.com/store/games?hl=en", "_blank")} className="btn font-bold"> <img src={googlePlay} alt="" /> Google Play</button>
+                        <button onClick={() => window.open("https://www.apple.com/app-store/", "_blank")} className="btn font-bold"> <img src={playStore} alt="" /> App Store</button>
                     </div>
                     <div className='pt-6'>
                         <img className='mx-auto' src="/assets/hero.png" alt="" />
@@ -70,6 +71,11 @@ const Home = () => {
                         </div>
                     </div>
                     <AppList></AppList>
+                    <div className="pt-5">
+                        <Link to="/apps">
+                            <button className="btn btn-primary"> Show All</button>
+                        </Link>
+                    </div>
 
                 </div>
             </div>

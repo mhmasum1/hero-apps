@@ -46,7 +46,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn btn-primary"><img src={githubImg} alt="" /> Contribute</button>
+                    <button onClick={() => window.open("https://github.com/mhmasum1", "_blank")} className="btn btn-primary"><img src={githubImg} alt="" /> Contribute</button>
                 </div>
             </div>
         </div>

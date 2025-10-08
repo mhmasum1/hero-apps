@@ -1,0 +1,398 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co.com/wFyf1t7B/rubaitul-azad-u4-F54-GIZWGI-unsplash.jpg",
+        "title": "Telegram",
+        "companyName": "Telegram FZ-LLC",
+        "description": "A secure messaging app focused on speed and privacy.",
+        "size": 110,
+        "reviews": 270,
+        "ratingAvg": 4.4,
+        "downloads": 13000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 8
+            },
+            {
+                "name": "2 star",
+                "count": 10
+            },
+            {
+                "name": "3 star",
+                "count": 40
+            },
+            {
+                "name": "4 star",
+                "count": 90
+            },
+            {
+                "name": "5 star",
+                "count": 122
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co.com/VdG71RV/rubaitul-azad-Fty8u3-JZ2-T8-unsplash.jpg",
+        "title": "X (Twitter)",
+        "companyName": "X Corp",
+        "description": "A social networking app to share updates and opinions.",
+        "size": 98,
+        "reviews": 390,
+        "ratingAvg": 4.2,
+        "downloads": 14500,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 15
+            },
+            {
+                "name": "2 star",
+                "count": 18
+            },
+            {
+                "name": "3 star",
+                "count": 45
+            },
+            {
+                "name": "4 star",
+                "count": 120
+            },
+            {
+                "name": "5 star",
+                "count": 192
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co.com/VWS1ZTFk/alexander-shatov-9-Zjd7-PE-FRM-unsplash.jpg",
+        "title": "LinkedIn",
+        "companyName": "Microsoft",
+        "description": "A professional network for career growth and jobs.",
+        "size": 140,
+        "reviews": 310,
+        "ratingAvg": 4.3,
+        "downloads": 12500,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 12
+            },
+            {
+                "name": "2 star",
+                "count": 20
+            },
+            {
+                "name": "3 star",
+                "count": 65
+            },
+            {
+                "name": "4 star",
+                "count": 90
+            },
+            {
+                "name": "5 star",
+                "count": 123
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "image": "https://i.ibb.co.com/wZhMKH53/rubaitul-azad-W3-Z2-ZNs1y4-I-unsplash.jpg",
+        "title": "Gmail",
+        "companyName": "Google",
+        "description": "A fast and secure email app with smart organization.",
+        "size": 150,
+        "reviews": 500,
+        "ratingAvg": 4.6,
+        "downloads": 20000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 6
+            },
+            {
+                "name": "2 star",
+                "count": 10
+            },
+            {
+                "name": "3 star",
+                "count": 50
+            },
+            {
+                "name": "4 star",
+                "count": 140
+            },
+            {
+                "name": "5 star",
+                "count": 294
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "image": "https://i.ibb.co.com/0y2mMGMC/rubaitul-azad-Yhg-Kun-Ty-Sks-unsplash.jpg",
+        "title": "Google Drive",
+        "companyName": "Google",
+        "description": "Cloud storage app to save and share your files easily.",
+        "size": 160,
+        "reviews": 280,
+        "ratingAvg": 4.5,
+        "downloads": 18000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 5
+            },
+            {
+                "name": "2 star",
+                "count": 14
+            },
+            {
+                "name": "3 star",
+                "count": 40
+            },
+            {
+                "name": "4 star",
+                "count": 100
+            },
+            {
+                "name": "5 star",
+                "count": 121
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "image": "https://i.ibb.co.com/bjYRZ9Vw/dima-solomin-UKAVi-H-h-FMk-unsplash.jpg",
+        "title": "Pinterest",
+        "companyName": "Pinterest Inc.",
+        "description": "A creativity app to explore and save your favorite ideas.",
+        "size": 95,
+        "reviews": 230,
+        "ratingAvg": 4.3,
+        "downloads": 11000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 9
+            },
+            {
+                "name": "2 star",
+                "count": 11
+            },
+            {
+                "name": "3 star",
+                "count": 45
+            },
+            {
+                "name": "4 star",
+                "count": 80
+            },
+            {
+                "name": "5 star",
+                "count": 85
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "image": "https://i.ibb.co.com/p6gm62kg/ralph-olazo-x2-N00-Q-Zd1-Y-unsplash.jpg",
+        "title": "Reddit",
+        "companyName": "Reddit Inc.",
+        "description": "A community app to discuss and share interesting topics.",
+        "size": 120,
+        "reviews": 270,
+        "ratingAvg": 4.2,
+        "downloads": 12500,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 14
+            },
+            {
+                "name": "2 star",
+                "count": 22
+            },
+            {
+                "name": "3 star",
+                "count": 55
+            },
+            {
+                "name": "4 star",
+                "count": 90
+            },
+            {
+                "name": "5 star",
+                "count": 89
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "image": "https://i.ibb.co.com/2Q2xhTF/scott-webb-bmmcf-Zq-Sj-BU-unsplash.jpg",
+        "title": "Slack",
+        "companyName": "Slack Technologies",
+        "description": "A communication app for teams and organizations.",
+        "size": 130,
+        "reviews": 190,
+        "ratingAvg": 4.4,
+        "downloads": 10000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 6
+            },
+            {
+                "name": "2 star",
+                "count": 14
+            },
+            {
+                "name": "3 star",
+                "count": 50
+            },
+            {
+                "name": "4 star",
+                "count": 70
+            },
+            {
+                "name": "5 star",
+                "count": 50
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "image": "https://i.ibb.co.com/pjdMXzYB/iyus-sugiharto-Eh1xd5x-DE-s-unsplash.jpg",
+        "title": "Zoom",
+        "companyName": "Zoom Video Communications",
+        "description": "A video conferencing app for meetings and webinars.",
+        "size": 155,
+        "reviews": 420,
+        "ratingAvg": 4.5,
+        "downloads": 19000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 12
+            },
+            {
+                "name": "2 star",
+                "count": 18
+            },
+            {
+                "name": "3 star",
+                "count": 45
+            },
+            {
+                "name": "4 star",
+                "count": 110
+            },
+            {
+                "name": "5 star",
+                "count": 235
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "image": "https://i.ibb.co.com/d0CjCn3V/freestocks-11-Sg-H7-U6-Tm-I-unsplash.jpg",
+        "title": "Netflix",
+        "companyName": "Netflix Inc.",
+        "description": "A streaming app to watch movies and TV shows anytime.",
+        "size": 190,
+        "reviews": 480,
+        "ratingAvg": 4.7,
+        "downloads": 25000,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 5
+            },
+            {
+                "name": "2 star",
+                "count": 12
+            },
+            {
+                "name": "3 star",
+                "count": 40
+            },
+            {
+                "name": "4 star",
+                "count": 120
+            },
+            {
+                "name": "5 star",
+                "count": 303
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "image": "https://i.ibb.co.com/Hp2zdYsr/alexander-shatov-s-IFCJHr-UWPM-unsplash-1.jpg",
+        "title": "Discord",
+        "companyName": "Discord Inc.",
+        "description": "A chat and community app for gamers and friends.",
+        "size": 125,
+        "reviews": 260,
+        "ratingAvg": 4.6,
+        "downloads": 13500,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 8
+            },
+            {
+                "name": "2 star",
+                "count": 10
+            },
+            {
+                "name": "3 star",
+                "count": 30
+            },
+            {
+                "name": "4 star",
+                "count": 90
+            },
+            {
+                "name": "5 star",
+                "count": 122
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "image": "https://i.ibb.co.com/kVRtCZWM/appshunter-io-6s-IBf34e-R0-unsplash.jpg",
+        "title": "Shopify",
+        "companyName": "Shopify Inc.",
+        "description": "An eCommerce app for managing online stores easily.",
+        "size": 100,
+        "reviews": 210,
+        "ratingAvg": 4.3,
+        "downloads": 9500,
+        "ratings": [
+            {
+                "name": "1 star",
+                "count": 9
+            },
+            {
+                "name": "2 star",
+                "count": 13
+            },
+            {
+                "name": "3 star",
+                "count": 40
+            },
+            {
+                "name": "4 star",
+                "count": 80
+            },
+            {
+                "name": "5 star",
+                "count": 68
+            }
+        ]
+    }
+]
