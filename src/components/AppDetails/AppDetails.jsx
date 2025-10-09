@@ -7,23 +7,52 @@ const AppDetails = () => {
     const { id } = useParams();
     const [app, setApp] = useState(null);
     const [installed, setInstalled] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
+
+        // url er id change hole useeffect colbe tokhn first a setLoading true kore rakhlam jeno loading message dekhay
+        setLoading(true);
+
         fetch("/appsFound.json")
             .then(res => res.json())
             .then(data => {
+                //id mil khuje app khuje anlam
                 const foundApp = data.find(item => item.id === parseInt(id));
-                setApp(foundApp);
+
+                if (foundApp) {
+
+                    // target app paoya gele setake state a rakhalam 
+                    setApp(foundApp);
+
+                    setNotFound(false);
+                } else {
+
+                    // id mil na pele app not found dekahnor jonne 
+                    setNotFound(true);
+                }
+
+                // data load ses hole setlaoading false kore debo
+                setLoading(false);
             })
-            .catch(err => console.error("Error loading app details:", err));
+            .catch(err => {
+                console.error("Error loading app details:", err);
+
+                // error asle notFound true
+                setNotFound(true);
+
+                // 🔹 error holeo setloading na dekhanor jonne false kor debo 
+                setLoading(false);
+            });
     }, [id]);
 
     const handleInstall = () => {
         setInstalled(true);
-        toast.success(`${app.title} installed successfully !`);
+        toast.success(`${app.title} installed successfully!`);
     };
 
-    if (!app) {
+    if (loading) {
         return (
             <div className="flex justify-center items-center h-screen">
                 <p className="text-xl font-semibold">Loading app details...</p>
@@ -31,8 +60,18 @@ const AppDetails = () => {
         );
     }
 
+    if (notFound) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <p className="text-xl font-semibold text-gray-600">
+                    ❌ App not found!
+                </p>
+            </div>
+        );
+    }
+
     return (
-        <div className=" mx-auto p-6">
+        <div className="mx-auto p-6">
             <div className="bg-white rounded-lg shadow-lg p-8">
                 <div className="flex flex-col md:flex-row gap-8 mb-8">
                     <img
