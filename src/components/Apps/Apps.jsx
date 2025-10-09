@@ -4,11 +4,22 @@ import CartDesign from '../CartDesign/CartDesign';
 const Apps = () => {
     const [foundApps, setFoundApps] = useState([]);
     const [searchApp, setSearchApp] = useState('');
+    const [loading, setLoading] = useState(true); // 🔹 spinner control
 
     useEffect(() => {
+        // fetch start hbar age spinner true
+        setLoading(true);
         fetch('/appsFound.json')
             .then(res => res.json())
-            .then((data) => setFoundApps(data));
+            .then((data) => {
+                setFoundApps(data);
+                // fetch ses hole spinner hide
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error(err);
+                setLoading(false);
+            });
     }, []);
 
     // Filtered apps 
@@ -16,9 +27,16 @@ const Apps = () => {
         app.title.toLowerCase().includes(searchApp.toLowerCase())
     );
 
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+        );
+    }
+
     return (
         <div className="bg-base-200 py-10 px-4">
-
             <div className="mb-6 text-center">
                 <h1 className="text-5xl font-bold">Our All Applications</h1>
                 <p className="py-6">
@@ -26,9 +44,7 @@ const Apps = () => {
                 </p>
             </div>
 
-
             <div className="flex justify-between items-center mb-6 max-w-6xl mx-auto">
-
                 <h3 className="font-bold text-left text-lg">
                     Apps Found ({filteredApps.length})
                 </h3>

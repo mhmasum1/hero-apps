@@ -5,61 +5,59 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const AppDetails = () => {
     const { id } = useParams();
+
+    // 🔹 States for app data, loading animation, install button, and not-found message
     const [app, setApp] = useState(null);
     const [installed, setInstalled] = useState(false);
     const [loading, setLoading] = useState(true);
     const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
-
-        // url er id change hole useeffect colbe tokhn first a setLoading true kore rakhlam jeno loading message dekhay
+        // jokhn URL-er id change hoy, tokhn new data load suru hoy 
         setLoading(true);
 
+        // appsFound.json theke data load
         fetch("/appsFound.json")
             .then(res => res.json())
             .then(data => {
-                //id mil khuje app khuje anlam
+                // id mil khuje target app khuje ana 
                 const foundApp = data.find(item => item.id === parseInt(id));
 
                 if (foundApp) {
-
-                    // target app paoya gele setake state a rakhalam 
+                    //app paile state a set rakha
                     setApp(foundApp);
-
                     setNotFound(false);
                 } else {
-
-                    // id mil na pele app not found dekahnor jonne 
+                    // na paile  notFound true kora
                     setNotFound(true);
                 }
 
-                // data load ses hole setlaoading false kore debo
+                // ⏹ loading ses
                 setLoading(false);
             })
             .catch(err => {
                 console.error("Error loading app details:", err);
-
-                // error asle notFound true
                 setNotFound(true);
-
-                // 🔹 error holeo setloading na dekhanor jonne false kor debo 
                 setLoading(false);
             });
     }, [id]);
 
+    //  Install button click handeler
     const handleInstall = () => {
         setInstalled(true);
         toast.success(`${app.title} installed successfully!`);
     };
 
+    // Loading spinner dekha jonne style overley
     if (loading) {
         return (
-            <div className="flex justify-center items-center h-screen">
-                <p className="text-xl font-semibold">Loading app details...</p>
+            <div className="fixed inset-0 flex justify-center items-center bg-white/70 backdrop-blur-sm">
+                <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
             </div>
         );
     }
 
+    // jdi data na paoya jay 
     if (notFound) {
         return (
             <div className="flex justify-center items-center h-screen">
@@ -73,6 +71,7 @@ const AppDetails = () => {
     return (
         <div className="mx-auto p-6">
             <div className="bg-white rounded-lg shadow-lg p-8">
+
                 <div className="flex flex-col md:flex-row gap-8 mb-8">
                     <img
                         src={app.image}
