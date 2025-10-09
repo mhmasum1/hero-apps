@@ -6,33 +6,24 @@ import toast, { Toaster } from 'react-hot-toast';
 const AppDetails = () => {
     const { id } = useParams();
 
-    // 🔹 States for app data, loading animation, install button, and not-found message
     const [app, setApp] = useState(null);
     const [installed, setInstalled] = useState(false);
     const [loading, setLoading] = useState(true);
     const [notFound, setNotFound] = useState(false);
 
+    // 🔹 App data fetch
     useEffect(() => {
-        // jokhn URL-er id change hoy, tokhn new data load suru hoy 
         setLoading(true);
-
-        // appsFound.json theke data load
         fetch("/appsFound.json")
             .then(res => res.json())
             .then(data => {
-                // id mil khuje target app khuje ana 
                 const foundApp = data.find(item => item.id === parseInt(id));
-
                 if (foundApp) {
-                    //app paile state a set rakha
                     setApp(foundApp);
                     setNotFound(false);
                 } else {
-                    // na paile  notFound true kora
                     setNotFound(true);
                 }
-
-                // ⏹ loading ses
                 setLoading(false);
             })
             .catch(err => {
@@ -42,13 +33,34 @@ const AppDetails = () => {
             });
     }, [id]);
 
-    //  Install button click handeler
+    // 🔹 Check if already installed (on mount or when ID changes)
+    useEffect(() => {
+        const installedApps = JSON.parse(localStorage.getItem("installedApps")) || [];
+        if (installedApps.includes(parseInt(id))) {
+            setInstalled(true);
+        } else {
+            setInstalled(false);
+        }
+    }, [id]);
+
+    // 🔹 Handle Install button click
     const handleInstall = () => {
+        const installedApps = JSON.parse(localStorage.getItem("installedApps")) || [];
+
+        if (installedApps.includes(app.id)) {
+            toast.error(`${app.title} is already installed!`);
+            setInstalled(true);
+            return;
+        }
+
+        installedApps.push(app.id);
+        localStorage.setItem("installedApps", JSON.stringify(installedApps));
+
         setInstalled(true);
         toast.success(`${app.title} installed successfully!`);
     };
 
-    // Loading spinner dekha jonne style overley
+    // 🔹 Loading overlay
     if (loading) {
         return (
             <div className="fixed inset-0 flex justify-center items-center bg-white/70 backdrop-blur-sm">
@@ -57,13 +69,10 @@ const AppDetails = () => {
         );
     }
 
-    // jdi data na paoya jay 
     if (notFound) {
         return (
             <div className="flex justify-center items-center h-screen">
-                <p className="text-xl font-semibold text-gray-600">
-                    ❌ App not found!
-                </p>
+                <p className="text-xl font-semibold text-gray-600">❌ App not found!</p>
             </div>
         );
     }
@@ -71,7 +80,6 @@ const AppDetails = () => {
     return (
         <div className="mx-auto p-6">
             <div className="bg-white rounded-lg shadow-lg p-8">
-
                 <div className="flex flex-col md:flex-row gap-8 mb-8">
                     <img
                         src={app.image}

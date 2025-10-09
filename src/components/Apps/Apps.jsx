@@ -4,7 +4,7 @@ import CartDesign from '../CartDesign/CartDesign';
 const Apps = () => {
     const [foundApps, setFoundApps] = useState([]);
     const [searchApp, setSearchApp] = useState('');
-    const [loading, setLoading] = useState(true); // 🔹 spinner control
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         // fetch start hbar age spinner true
