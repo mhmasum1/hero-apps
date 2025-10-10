@@ -1,16 +1,40 @@
-# React + Vite
+# AppHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AppHub is a comprehensive app discovery and management platform. Explore, install, and manage a wide range of applications, from social media and entertainment to productivity tools, all in one place. AppHub helps users stay connected, discover trending apps, and keep their devices organized.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse popular and trending apps
+- Search apps by title
+- View detailed app information including downloads, ratings, reviews, and description
+- Install and uninstall apps with local storage tracking
+- Interactive charts for app ratings
+- Responsive design for all device sizes
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
+- React.js
+- React Router DOM
+- Tailwind CSS
+- DaisyUI
+- JavaScript (ES6+)
 
-## Expanding the ESLint configuration
+### Backend / API
+- Local JSON files
+- Fetch API for data handling
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Additional Libraries
+- react-hot-toast (for notifications)
+- lucide-react (for icons)
+- Chart.js / custom chart component for ratings
+  
+### Usage
+
+Navigate through Home, Apps, and Installation pages
+
+Search for apps using the search bar
+
+Install or uninstall apps and view their details
+
+Sort apps by downloads for better discovery
