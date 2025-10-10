@@ -5,7 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 const Installation = () => {
     // all installed apps rakhar jonne state create korbo
     const [installedApps, setInstalledApps] = useState([]);
-    const [sortBy, setSortBy] = useState("size");
+    const [downloadOrder, setDownloadOrder] = useState("desc"); // 🔹 default High-Low
 
     // jokhn component ta load hobe 
     useEffect(() => {
@@ -47,10 +47,10 @@ const Installation = () => {
 
     // Sorting 
     const sortedApps = [...installedApps].sort((a, b) => {
-        if (sortBy === "size") return b.size - a.size;
-        if (sortBy === "rating") return b.ratingAvg - a.ratingAvg;
-        if (sortBy === "downloads") return b.downloads - a.downloads;
-        return 0;
+        // High-Low or Low-High
+        return downloadOrder === "desc"
+            ? b.downloads - a.downloads
+            : a.downloads - b.downloads;
     });
 
     return (
@@ -70,15 +70,21 @@ const Installation = () => {
                     <div className="text-lg font-semibold text-gray-900">
                         {sortedApps.length} Apps Found
                     </div>
-                    <select
-                        value={sortBy}
-                        onChange={(e) => setSortBy(e.target.value)}
-                        className="px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
-                    >
-                        <option value="size">Sort By Size</option>
-                        <option value="rating">Sort By Rating</option>
-                        <option value="downloads">Sort By Downloads</option>
-                    </select>
+
+                    {/*  Sorting*/}
+                    <div className="flex gap-3 items-center">
+                        <label className="text-sm font-medium text-gray-700">
+                            Sort By Downloads:
+                        </label>
+                        <select
+                            value={downloadOrder}
+                            onChange={(e) => setDownloadOrder(e.target.value)}
+                            className="px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+                        >
+                            <option value="desc">High-Low</option>
+                            <option value="asc">Low-High</option>
+                        </select>
+                    </div>
                 </div>
 
                 {sortedApps.length === 0 ? (
@@ -97,7 +103,6 @@ const Installation = () => {
                                     alt={app.title}
                                     className="w-20 h-20 rounded-2xl object-cover"
                                 />
-
 
                                 <div className="flex-1">
                                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -120,7 +125,6 @@ const Installation = () => {
                                         <div className="text-gray-600">{app.size} MB</div>
                                     </div>
                                 </div>
-
 
                                 <button
                                     onClick={() => handleUninstall(app.id, app.title)}
