@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import RatingsChart from '../RatingsChart/RatingsChart';
 import toast, { Toaster } from 'react-hot-toast';
+import downloadImg from '../../../public/assets/icon-downloads.png';
+import averImg from '../../../public/assets/icon-ratings.png';
+import reviewImg from '../../../public/assets/icon-review.png';
 
 const AppDetails = () => {
     const { id } = useParams();
@@ -11,7 +14,7 @@ const AppDetails = () => {
     const [loading, setLoading] = useState(true);
     const [notFound, setNotFound] = useState(false);
 
-    // 🔹 App data fetch
+
     useEffect(() => {
         setLoading(true);
         fetch("/appsFound.json")
@@ -33,34 +36,25 @@ const AppDetails = () => {
             });
     }, [id]);
 
-    // 🔹 Check if already installed (on mount or when ID changes)
     useEffect(() => {
         const installedApps = JSON.parse(localStorage.getItem("installedApps")) || [];
-        if (installedApps.includes(parseInt(id))) {
-            setInstalled(true);
-        } else {
-            setInstalled(false);
-        }
+        setInstalled(installedApps.includes(parseInt(id)));
     }, [id]);
 
-    // 🔹 Handle Install button click
+
     const handleInstall = () => {
         const installedApps = JSON.parse(localStorage.getItem("installedApps")) || [];
-
         if (installedApps.includes(app.id)) {
             toast.error(`${app.title} is already installed!`);
-            setInstalled(true);
             return;
         }
 
         installedApps.push(app.id);
         localStorage.setItem("installedApps", JSON.stringify(installedApps));
-
         setInstalled(true);
         toast.success(`${app.title} installed successfully!`);
     };
 
-    // 🔹 Loading overlay
     if (loading) {
         return (
             <div className="fixed inset-0 flex justify-center items-center bg-white/70 backdrop-blur-sm">
@@ -78,40 +72,48 @@ const AppDetails = () => {
     }
 
     return (
-        <div className="mx-auto p-6">
+        <div className="mx-auto p-6 max-w-7xl">
             <div className="bg-white rounded-lg shadow-lg p-8">
+
                 <div className="flex flex-col md:flex-row gap-8 mb-8">
-                    <img
-                        src={app.image}
-                        alt={app.title}
-                        className="w-48 h-48 rounded-2xl object-cover"
-                    />
+                    <div className="flex-shrink-0 flex justify-center items-center">
+                        <img
+                            src={app.image}
+                            alt={app.title}
+                            className="w-64 h-full object-cover rounded-2xl md:h-auto md:max-h-[320px]"
+                        />
+                    </div>
 
-                    <div>
-                        <h1 className="text-3xl font-bold mb-2">{app.title}</h1>
-                        <p className="text-lg text-blue-600 mb-4">
-                            Developed by {app.companyName}
-                        </p>
+                    <div className="flex flex-col justify-between">
+                        <div>
+                            <h1 className="text-3xl font-bold mb-2">{app.title}</h1>
+                            <p className="text-lg text-blue-600 mb-4">
+                                Developed by {app.companyName}
+                            </p>
 
-                        <div className="flex gap-8 mb-6">
-                            <div>
-                                <p className="text-sm text-gray-600">Downloads</p>
-                                <p className="text-2xl font-bold">{app.downloads}</p>
-                            </div>
-                            <div>
-                                <p className="text-sm text-gray-600">Rating</p>
-                                <p className="text-2xl font-bold">{app.ratingAvg}</p>
-                            </div>
-                            <div>
-                                <p className="text-sm text-gray-600">Reviews</p>
-                                <p className="text-2xl font-bold">{app.reviews}</p>
+                            <div className="flex gap-8 mb-6">
+                                <div className="text-center">
+                                    <img src={downloadImg} alt="" className="mx-auto w-8 h-8" />
+                                    <p className="text-sm text-gray-600">Downloads</p>
+                                    <p className="text-2xl font-bold">{app.downloads}</p>
+                                </div>
+                                <div className="text-center">
+                                    <img src={averImg} alt="" className="mx-auto w-8 h-8" />
+                                    <p className="text-sm text-gray-600">Avg Rating</p>
+                                    <p className="text-2xl font-bold">{app.ratingAvg}</p>
+                                </div>
+                                <div className="text-center">
+                                    <img src={reviewImg} alt="" className="mx-auto w-8 h-8" />
+                                    <p className="text-sm text-gray-600">Reviews</p>
+                                    <p className="text-2xl font-bold">{app.reviews}</p>
+                                </div>
                             </div>
                         </div>
 
                         <button
                             onClick={handleInstall}
                             disabled={installed}
-                            className={`px-6 py-2 rounded text-white transition ${installed
+                            className={`px-6 py-2 rounded text-white font-semibold transition ${installed
                                 ? 'bg-gray-400 cursor-not-allowed'
                                 : 'bg-green-500 hover:bg-green-600'
                                 }`}
@@ -121,11 +123,13 @@ const AppDetails = () => {
                     </div>
                 </div>
 
+                <hr className="my-6 border-gray-300" />
                 <RatingsChart ratings={app.ratings} />
+                <hr className="my-6 border-gray-300" />
 
-                <div className="mb-8">
+                <div>
                     <h2 className="text-2xl font-bold mb-4">Description</h2>
-                    <p>{app.description}</p>
+                    <p className="text-gray-700 leading-relaxed">{app.description}</p>
                 </div>
             </div>
 
