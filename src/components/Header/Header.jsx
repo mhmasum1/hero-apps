@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom'; // Link import করা লাগবে
+import { NavLink, Link } from 'react-router-dom';
 import logo from '../../../public/assets/logo.png';
 import githubImg from '../../../public/assets/githubIcon.png';
 
@@ -25,7 +25,7 @@ const Header = () => {
 
                     <Link to="/" className="flex items-center gap-2">
                         <img className='w-7 h-7' src={logo} alt="Hero.IO Logo" />
-                        <span className="btn btn-ghost text-xl normal-case">Hero.IO</span>
+                        <span className="btn btn-ghost text-xl normal-case">AppHub</span>
                     </Link>
                 </div>
 

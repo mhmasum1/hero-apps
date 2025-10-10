@@ -47,7 +47,7 @@ const Footer = () => {
                     </div>
                 </nav>
                 <aside>
-                    <p>Copyright © {new Date().getFullYear()} - All right reserved by Hero-apps</p>
+                    <p>Copyright © {new Date().getFullYear()} - All right reserved by AppHub</p>
                 </aside>
             </footer>
         </div>
